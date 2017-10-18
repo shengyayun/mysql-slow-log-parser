@@ -78,7 +78,8 @@ class Parser{
 				$item['Rows_examined'] = $matches[4];
 				continue;
 			}
-			if (preg_match("/^[^#]/", $row) && !preg_match("/^SET timestamp=/", $row)) {
+			//过滤注释、设置时间戳、use db
+			if (preg_match("/^[^#]/", $row) && !preg_match("/^SET timestamp=/", $row) && !preg_match("/^use [^;]+;$/", $row)) {
 				if ($item == false){
 					continue;
 				}
