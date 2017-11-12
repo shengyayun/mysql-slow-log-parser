@@ -19,7 +19,7 @@ class Parser{
 			    `Rows_sent` int not null,
 			    `Rows_examined` int not null,
 			    `Content` varchar(255) not null
-			)engine = innodb;"
+			)engine = innodb,charset = utf8mb4;"
 		);
 	}
 	
